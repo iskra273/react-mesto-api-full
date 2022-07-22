@@ -1,0 +1,7 @@
+.header__auth_exit {
+    font-weight: 400;
+}
+
+.header__auth_exit:hover {
+    opacity: 0.6;
+  }

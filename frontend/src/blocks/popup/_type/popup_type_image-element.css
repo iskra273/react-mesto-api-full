@@ -1,0 +1,7 @@
+.popup_type_image-element {
+    display: flex;
+    visibility: hidden;
+    background-color: rgba(0, 0, 0, .9);
+    transition: opacity  0.9s linear;
+}
+

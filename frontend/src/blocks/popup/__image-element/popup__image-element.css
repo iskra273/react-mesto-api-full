@@ -1,0 +1,14 @@
+.popup__image-element {
+    max-width: 75vw;
+    max-height: 75vh;
+    margin: 0 auto;
+    padding: 0;
+    border-radius: 0px;
+}
+
+@media screen and (max-width: 540px) {
+	.popup__image-element {
+        min-width: 240px;
+        margin: 0;
+    }
+}

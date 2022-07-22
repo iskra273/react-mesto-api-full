@@ -1,0 +1,17 @@
+.infotooltip {
+    display: flex;
+    width: 430px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+    position: relative;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+    border-radius: 10px;
+    flex-direction: column;
+    transition: opacity  0.5s linear, visibility  0s linear 0.5s;
+}

@@ -1,0 +1,21 @@
+.login__input {
+    width: 358px;
+    height: 27px;
+    margin: 0 auto;
+    padding: 0;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #ccc;
+    background-color: #000;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #ccc;
+    vertical-align: text-top;
+}
+
+.login__input:first-of-type {
+    margin-bottom: 30px;
+  }
