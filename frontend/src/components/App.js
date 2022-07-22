@@ -19,16 +19,11 @@ import ProtectedRoute from './ProtectedRoute';
 
 
 function App() {
-  // Стейты для попапов (принимает состояние открыт(true), закрыт (false))
   const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = useState(false);
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false);
   const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = useState(false);
-  
-  // Стейты для карточек
   const [isSelectedCard, setSelectedCard] = useState(null);
   const [cards, setCards] = useState([]);
-
- // Стейт для данных пользователя
   const [currentUser, setCurrentUser] = useState({});
  
  // Стейт авторизации пользователя (true - вошел в систему)
