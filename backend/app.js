@@ -15,11 +15,11 @@ const { requestLogger, errorLogger } = require('./middlewares/logger');
 const options = {
   origin: [
     'http://localhost:3000',
-    'http://mesto.iskra273.nomoredomains.xyz',
-    'https://mesto.iskra273.nomoredomains.xyz',
-    'http://api.mesto.iskra273.nomoredomains.xyz',
-    'https://api.mesto.iskra273.nomoredomains.xyz',
-    'https://github.com/iskra273',
+    // 'http://mesto.iskra273.nomoredomains.xyz',
+    // 'https://mesto.iskra273.nomoredomains.xyz',
+    // 'http://api.mesto.iskra273.nomoredomains.xyz',
+    // 'https://api.mesto.iskra273.nomoredomains.xyz',
+    // 'https://github.com/iskra273',
   ],
   credentials: true,
 };
@@ -37,6 +37,13 @@ mongoose.connect('mongodb://localhost:27017/mestodb');
 
 // подключаем логгер запросов
 app.use(requestLogger);
+
+// краш-тест сервера
+app.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
 
 app.post('/signin', validateLogin, login);
 app.post('/signup', validateCreateUser, createUser);

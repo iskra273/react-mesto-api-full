@@ -16,8 +16,7 @@ class Auth {
     return fetch(`${this._baseUrl}/signup`, {
       method: 'POST',
       headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({password, email})
     })
@@ -29,8 +28,7 @@ class Auth {
       return fetch(`${this._baseUrl}/signin`, {
         method: 'POST',
         headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify({password, email})
       })
@@ -53,6 +51,5 @@ export const auth = new Auth({
   baseUrl: `${window.location.protocol}${process.env.REACT_APP_API_URL || '//localhost:3001'}`,
   headers: {
     'Content-Type': 'application/json',
-    'Accept': 'application/json',
   },
 });

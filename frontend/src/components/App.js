@@ -41,7 +41,8 @@ function App() {
  const history = useHistory();
 
   useEffect(() => {
-    
+    tokenCheck();
+    if (loggedIn) {
       api.getProfile()
       .then((data) => {
         setCurrentUser(data)
@@ -51,14 +52,13 @@ function App() {
       })
     
     
-    api.getInitialCards()
-      .then((res) => setCards(res))
-      .catch((err) => {
-        console.error(err);
+      api.getInitialCards()
+        .then((res) => setCards(res))
+        .catch((err) => {
+          console.error(err);
       })
-      tokenCheck()
     }
-  , []);
+    }, [loggedIn]);
   
   
 
@@ -199,9 +199,9 @@ function App() {
 
   // Проверка токена
   function tokenCheck() {
-    const jwt = localStorage.getItem('jwt');
-    if(jwt) {
-      auth.validityToken(jwt)
+    const token = localStorage.getItem('jwt');
+    if(token) {
+      auth.validityToken(token)
       .then((res) => {
         if(res) {
           setUserEmailHeader(res.data.email)
