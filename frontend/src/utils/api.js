@@ -20,8 +20,7 @@ class Api {
   //1.Загрузка инф-ции о пользователе с сервера  
   getProfile() {
     return fetch(`${this._baseUrl}/users/me`, {
-        // headers: this._headers
-        headers: this._headerJwt
+        headers: this._headerJwt(),
     })
     .then(this._getResponse)
     .catch(console.log)
@@ -30,8 +29,7 @@ class Api {
   // 2.Загрузка карточек с сервера
   getInitialCards() {
     return fetch(`${this._baseUrl}/cards`, {
-        // headers: this._headers
-        headers: this._headerJwt
+        headers: this._headerJwt(),
     })
     .then(this._getResponse)
     .catch(console.log)  
@@ -42,8 +40,7 @@ class Api {
     console.log('editProfile')
     return fetch(`${this._baseUrl}/users/me`, {
       method: "PATCH",  
-      // headers: this._headers,
-      headers: this._headerJwt,
+      headers: this._headerJwt(),
       body: JSON.stringify({
         name,
         about
@@ -57,8 +54,7 @@ class Api {
   addCard(name, link) {
     return fetch(`${this._baseUrl}/cards`, {
       method: "POST",  
-      // headers: this._headers,
-      headers: this._headerJwt,
+      headers: this._headerJwt(),
       body: JSON.stringify({
         name, 
         link
@@ -72,8 +68,7 @@ class Api {
   deleteCard(id) {
     return fetch(`${this._baseUrl}/cards/${id}`, {
       method: "DELETE",  
-      // headers: this._headers
-      headers: this._headerJwt,
+      headers: this._headerJwt(),
       
     })
     .then(this._getResponse)
@@ -84,8 +79,7 @@ class Api {
   addLike(id) {
     return fetch(`${this._baseUrl}/cards/${id}/likes`, {
       method: "PUT",  
-      // headers: this._headers
-      headers: this._headerJwt
+      headers: this._headerJwt(),
     })
     .then(this._getResponse)
     .catch(console.log)  
@@ -94,8 +88,7 @@ class Api {
   deleteLike(id) {
     return fetch(`${this._baseUrl}/cards/${id}/likes`, {
       method: "DELETE",  
-      // headers: this._headers
-      headers: this._headerJwt,
+      headers: this._headerJwt(),
     })
     .then(this._getResponse)
     .catch(console.log)  
@@ -105,8 +98,7 @@ class Api {
   updateAvatar(avatar) {
     return fetch(`${this._baseUrl}/users/me/avatar`, {
       method: "PATCH",  
-      // headers: this._headers,
-      headers: this._headerJwt,
+      headers: this._headerJwt(),
       body: JSON.stringify({
         avatar: avatar
       })
