@@ -204,7 +204,7 @@ function App() {
       auth.validityToken(token)
       .then((res) => {
         if(res) {
-          setUserEmailHeader(res.data.email)
+          setUserEmailHeader(res.email)
         };
         setLoggedIn(true);
         history.push('/');
