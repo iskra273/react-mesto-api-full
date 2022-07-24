@@ -1,7 +1,7 @@
 class Auth {
   constructor({baseUrl, headers}) {
-    this._headers = headers
-    this._baseUrl = baseUrl
+    this.headers = headers
+    this.baseUrl = baseUrl
 }
 
   getResponse(res) {
@@ -13,7 +13,7 @@ class Auth {
   }
 
   register = (password, email) => {
-    return fetch(`${this._baseUrl}/signup`, {
+    return fetch(`${this.baseUrl}/signup`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -25,7 +25,7 @@ class Auth {
   }; 
 
   authorize = (password, email) => {
-      return fetch(`${this._baseUrl}/signin`, {
+      return fetch(`${this.baseUrl}/signin`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -36,7 +36,7 @@ class Auth {
   }; 
 
   validityToken = (jwt) => {
-    return fetch(`${this._baseUrl}/users/me`, {
+    return fetch(`${this.baseUrl}/users/me`, {
       method: 'GET',
       headers: {
         "Content-Type": "application/json",
