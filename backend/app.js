@@ -15,11 +15,11 @@ const { requestLogger, errorLogger } = require('./middlewares/logger');
 const options = {
   origin: [
     'http://localhost:3000',
-    // 'http://mesto.iskra273.nomoredomains.xyz',
-    // 'https://mesto.iskra273.nomoredomains.xyz',
-    // 'http://api.mesto.iskra273.nomoredomains.xyz',
-    // 'https://api.mesto.iskra273.nomoredomains.xyz',
-    // 'https://github.com/iskra273',
+    'http://mesto.iskra273.nomoredomains.xyz',
+    'https://mesto.iskra273.nomoredomains.xyz',
+    'http://api.mesto.iskra273.nomoredomains.xyz',
+    'https://api.mesto.iskra273.nomoredomains.xyz',
+    'https://github.com/iskra273',
   ],
   credentials: true,
 };
